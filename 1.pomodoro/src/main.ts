@@ -5,5 +5,4 @@ import router from './plugins/router'
 
 import 'virtual:windi.css'
 
-
 createApp(App).use(router).mount('#app')
