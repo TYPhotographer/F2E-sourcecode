@@ -2,7 +2,20 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
-  { path: '/', component: () => import('@/pages/index.vue') },
+  {
+    path: '/',
+    component: () => import('@/pages/index.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('@/pages/add.vue'),
+      },
+      {
+        path: 'list',
+        component: () => import('@/pages/list.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
